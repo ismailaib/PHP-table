@@ -1,4 +1,23 @@
 <?php
+require 'connection.php';
+
+if(isset($_POST["submit"])){
+  $quantite = $_POST["quantite"];
+  $designation = $_POST["designation"];
+  $prixunitaire = $_POST["prixunitaire"];
+  $prixtotal = $_POST["prixtotal"];
+
+
+
+  $query = "INSERT INTO tb_data VALUES('$quantite', '$designation', '$prixunitaire', '$prixtotal')";
+  mysqli_query($conn,$query);
+  echo
+  "
+  <script> alert('Data Inserted Successfully'); </script>
+  ";
+}
+?>
+<?php
 include("config.php");
 if(isset($_POST['input'])){
 
@@ -26,36 +45,35 @@ if(isset($_POST['input'])){
                  <?php
                  #from the database
                  while ($row = mysqli_fetch_assoc($result)) {
-                    $id = $row['id'];
                     $designation = $row['designation'];
-                    $prixunitaire = $row['prix-unitaire'];  
-                    $prixtotal = $row['prix-total'];                                    
+                    $prixunitaire = $row['prix-unitaire'];                                    
                  ?>
-                <form action="insert.php" method="POST">
+                <form action="" method="POST">
                     <tr>
                     <td>
                         <div class="form-group mb-3">
-                                <button id="ADD" name="ADD" type="button" onclick="Add()" value="ADD" class="btn btn-success">ADD</button>
-                            </div>
-                            <div class="form-group mb-3">
-                                <button id="ajouter" name="ajouter" type="button" value="ajouter" class="btn btn-danger">ajouter</button>
-                            </div>
+                        <button type="submit" name="submit">Submit</button>
                         </td>
-                        <td><input name="quantite" type="number" id="quantite" placeholder="quantite"></td>
-                        <td><?php echo $designation;?></td>
-                        <td><input name="prixunitaire" type="number" id="prixunitaire" placeholder="prix-unitaire" value="<?php echo $prixunitaire;?>"></td>
-                        <td><b name="prixtotal" id="prixtotal"></b></td>
+                        <td><div class="form-group mb-3">
+                                <input type="number" id="quantite" onclick="Add()" name="quantite" class="form-control" /><br>
+                            </div></td>
+                        <td><div class="mb-3">
+                                <input type="text" name="designation" value="<?php echo $designation;?>" class="form-control"><br>
+                            </div></td>
+                        <td><div class="form-group mb-3">
+                                <input type="number" id="prixunitaire" onclick="Add()" name="prixunitaire" class="form-control" value="<?php echo $prixunitaire ?>"/><br>
+                            </div></td>
+                        <td>
+                       <input  type="" id="prixtotal" name="prixtotal" class="form-control" value=""/><br>
+                    </td>
                     </tr>
                 </form>
                  <?php
-                
                 }
                 ?>
             </tbody>
         </table>
         <?php
-
-        
         }else{
             
             echo "<h6 class='text-danger text-center mt-3'>NO DATA FOUND</h6>";
@@ -64,3 +82,12 @@ if(isset($_POST['input'])){
 ?>
 
 
+<script>
+function Add() {
+    var quantite = document.getElementById("quantite").value;
+    var quantiteInMinutes = quantite;
+    var prixunitaire = document.getElementById("prixunitaire").value;
+    var prixtotal = quantiteInMinutes * prixunitaire;
+    document.getElementById("prixtotal").value= prixtotal.toFixed(2);
+}
+</script>  

@@ -101,28 +101,3 @@ if(isset($_POST['save']))
     }
 }
 
-if(isset($_POST['ADD']))
-{
-    $quantite = $_POST['quantite'];
-    $designation = $_POST['designation'];
-    $prixunitaire = $_POST['prixunitaire'];
-    $prixtotal = $_POST['prixtotal'];
-
-    $query = "INSERT INTO company (designation, prixunitaire, prixtotal, prixtotal) VALUES ('$designation','$prixunitaire','$prixtotal','$prixtotal')";
-    $query_run = mysqli_query($con, $query);
-
-    if($query_run)
-    {
-        $_SESSION['status'] = "Date values Inserted";
-        header("Location: orders.php");
-    }
-    else
-    {
-        $_SESSION['status'] = "Date values Inserting Failed";
-        header("Location: index.php");
-    }
-}      
-    
-
-?>
-

@@ -1,45 +1,37 @@
+
 <?php
-$servername = "localhost";
+$server = "localhost";
 $username = "root";
 $password = "";
 $dbname = "myshop";
 
+$conn = mysqli_connect($server ,$username ,$password ,$dbname) ;
 
+if(isset($_POST['submit'])){
+echo "hello" ;
+if (!empty($_POST['quantite']) && !empty($_POST['designation']) && !empty($_POST['prixunitaire']) && !empty($_POST['prixtotal'])){
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}if(isset($_POST['ajouter']))
-{
-    $quantite = $_POST['quantite'];
-    $designation = $_POST['designation'];
-    $prixunitaire = $_POST['prixunitaire'];
-    $prixtotal = $_POST['prixtotal'];
+        $quantite = $_POST['quantite'] ;
+        $designation = $_POST['designation'] ;
+        $prixunitaire = $_POST['prixunitaire'] ; 
+        $prixtotal = $_POST['prixtotal'] ;
 
-    $sql = "INSERT INTO produit (designation, prixunitaire, prixtotal, prixtotal) VALUES ('designation','prixunitaire','prixtotal','prixtotal')";
-    $query_run = mysqli_query($con, $query);
+        $query = " INSERT INTO 'produit'(quantite,designation,prixunitaire,prixtotal) VALUE ('quantite','designation','prixunitaire','prixtotal') " ;
 
-    if($query_run)
-    {
-        $_SESSION['status'] = "Date values Inserted";
-        header("Location: index.php");
+        $run = mysql_query($conn,$query) or die(mysqli_error());
+
+        if ($run) {
+            echo " FORM SUBMITTED SUCCESSFULLY" ;
+        }
+        else {
+            echo "FORM NOTSUBMMITED" ;
+        }
     }
-    else
-    {
-        $_SESSION['status'] = "Date values Inserting Failed";
-        header("Location: index.php");
+    else{
+        echo "all fields required" ;
     }
-}   
+}
+
 ?>
 
-<script>
-function Add() {
-    var quantite = document.getElementById("quantite").value;
-    var quantiteInMinutes = quantite;
-    var prixunitaire = document.getElementById("prixunitaire").value;
-    var prixtotal = quantiteInMinutes * prixunitaire;
-    document.getElementById("prixtotal").innerHTML = prixtotal.toFixed(2);
-}
-</script>   
+ 
