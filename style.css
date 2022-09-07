@@ -1,3 +1,4 @@
+
 .card {
     position: relative;
     display: flex;
@@ -8,7 +9,7 @@
     background-clip: border-box;
     border: 1pxsolidrgba(0,0,0,.125);
     border-radius: 0.25rem;
-    width: 40rem;
+    width: 15rem;
 }
 
 @media (max-width: 767.98px) { 
@@ -20,3 +21,33 @@
     }
  }
   
+ img{
+    max-width: 100%;
+    height: auto;
+    background: lightblue;
+    background: radial-gradient(white 30%, lightblue 70%);
+}
+
+.fa-star,
+.fa-star-half{
+    color: yellow;
+    padding: 3% 0;
+}
+
+#cart_count{
+    text-align: center;
+    padding: 0 0.9rem 0.1rem 0.9rem;
+    border-radius: 3rem;
+}
+
+.shopping-cart{
+    padding: 3% 0;
+}
+
+.cart-items + .cart-items{
+    padding: 2% 0;
+}
+
+.price-details h6{
+    padding: 3% 2%;
+}
