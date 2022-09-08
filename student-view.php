@@ -7,42 +7,16 @@ require 'dbcone.php';
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="student-view.css">
     <title>Student View</title>
 </head>
 <body>
-
-
-<style>
-    .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.info {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.form-group {
-    display: flex;
-    justify-content: end;
-    flex-direction: column;
-}
-
-
-    @media (max-width: 767.98px) { 
     
-    .container {
-        display: inline;
-        justify-content: space-around;
-        align-items: center;
-    }
- }
-  
+<style>
+    
 </style>
     <div class="container mt-5" >
     
