@@ -71,7 +71,7 @@ require 'dbcone.php';
                                     </div>
                             </div>
                             <div class="form-group mb-3">
-                                <button type="submit" name="save" class="btn btn-success">Continuer</button>
+                                <button  type="submit" name="save" class="btn btn-success">Continuer</button>
                             </div>
                             
                                 </form>

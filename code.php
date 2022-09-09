@@ -92,7 +92,7 @@ if(isset($_POST['save']))
     if($query_run)
     {
         $_SESSION['status'] = "Date values Inserted";
-        header("Location: orders.php");
+        header("Location: admin.php");
     }
     else
     {
