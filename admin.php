@@ -95,43 +95,7 @@ if(isset($message)){
 
 </section>
 
-<section class="display-product-table">
 
-   <table>
-
-      <thead>
-         <th>product name</th>
-         <th>product price</th>
-         <th>action</th>
-      </thead>
-
-      <tbody>
-         <?php
-         
-            $select_products = mysqli_query($conn, "SELECT * FROM `products`");
-            if(mysqli_num_rows($select_products) > 0){
-               while($row = mysqli_fetch_assoc($select_products)){
-         ?>
-
-         <tr>
-            <td><?php echo $row['name']; ?></td>
-            <td>$<?php echo $row['price']; ?>/-</td>
-            <td>
-               <a href="admin.php?delete=<?php echo $row['id']; ?>" class="delete-btn" onclick="return confirm('are your sure you want to delete this?');"> <i class="fas fa-trash"></i> delete </a>
-               <a href="admin.php?edit=<?php echo $row['id']; ?>" class="option-btn"> <i class="fas fa-edit"></i> update </a>
-            </td>
-         </tr>
-
-         <?php
-            };    
-            }else{
-               echo "<div class='empty'>no product added</div>";
-            };
-         ?>
-      </tbody>
-   </table>
-
-</section>
 
 <section class="edit-form-container">
 

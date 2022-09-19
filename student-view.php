@@ -9,7 +9,6 @@ require 'dbcone.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="student-view.css">
     <title>Student View</title>
 </head>
@@ -25,7 +24,7 @@ require 'dbcone.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Les Informations
-                            <a href="index.php" class="btn btn-danger float-end">Retour</a>
+                            <a href="home.php" class="btn btn-danger float-end">Retour</a>
                         </h4>
                     </div>
                     <div class="card-body" >
@@ -92,6 +91,5 @@ require 'dbcone.php';
     
     
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

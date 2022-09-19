@@ -32,16 +32,15 @@
                                 </form>
                 <div class="card">
                     <div class="card-header">
-                        <h4>Coordonnees de l'entreprise
+                        <h4>DATA-TABLE
                             <a href="student-create.php" class="btn btn-primary float-end">Ajouter</a>
                         </h4>
                     </div>
                     <div class="card-body">
 
-                        <table class="table table-bordered table-striped">
+                        <table class="table table-sm table-hover">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
                                     <th>Nom de l'entreprise</th>
                                     <th>Adresse</th>
                                     <th>Tel:</th>
@@ -67,12 +66,11 @@
                                             {
                                                 ?>
                                                 <tr>
-                                                <td><?= $items['id']; ?></td>
                                                 <td><?= $items['name']; ?></td>
                                                 <td><?= $items['email']; ?></td>
                                                 <td><?= $items['phone']; ?></td>
                                                 <td><?= $items['course']; ?></td>
-                                                <td>
+                                                <td >
                                                     <a href="student-view.php?id=<?= $items['id']; ?>" class="btn btn-info btn-sm">voir</a>
                                                     <a href="student-edit.php?id=<?= $items['id']; ?>" class="btn btn-success btn-sm">Modifier</a>
                                                     <form action="code.php" method="POST" class="d-inline">
@@ -102,7 +100,6 @@
                                         {
                                             ?>
                                             <tr>
-                                                <td><?= $student['id']; ?></td>
                                                 <td><?= $student['name']; ?></td>
                                                 <td><?= $student['email']; ?></td>
                                                 <td><?= $student['phone']; ?></td>
